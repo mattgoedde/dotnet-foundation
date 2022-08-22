@@ -30,6 +30,5 @@ namespace Extensions.Numbers
                 .Bind(x => x * 9)
                 .Bind(x => x / 5)
                 .Bind(x => x + 32);
-
     }
 }
