@@ -1,4 +1,3 @@
-
 using System;
 using Extensions.Classes;
 
@@ -6,7 +5,6 @@ namespace Extensions.Numbers
 {
     public static partial class Extensions
     {
-        // Conversions
         public static decimal FahrenheitToCelsius(decimal tempF)
             => tempF.Wrap()
                 .Bind(x => x - 32)
