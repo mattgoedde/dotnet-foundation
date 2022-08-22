@@ -1,6 +1,6 @@
 using System;
 
-namespace DotnetExtensions.Classes
+namespace Extensions.Classes
 {
     public class Box<T>
     {

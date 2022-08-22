@@ -1,8 +1,8 @@
 using System;
 using System.Text.RegularExpressions;
-using DotnetExtensions.Classes;
+using Extensions.Classes;
 
-namespace DotnetExtensions
+namespace Extensions
 {
     public static partial class Extensions
     {

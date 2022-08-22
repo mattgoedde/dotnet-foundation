@@ -1,8 +1,8 @@
 
 using System;
-using DotnetExtensions.Classes;
+using Extensions.Classes;
 
-namespace DotnetExtensions.Numbers
+namespace Extensions.Numbers
 {
     public static partial class Extensions
     {

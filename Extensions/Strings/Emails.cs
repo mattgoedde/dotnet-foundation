@@ -1,7 +1,7 @@
 using System;
 using System.Net.Mail;
 
-namespace DotnetExtensions
+namespace Extensions
 {
     public static partial class Extensions
     {
