@@ -13,7 +13,10 @@ namespace DotnetExtensions
         public static Func<string, bool> IsNumeric = x => new Regex("[0-9]").IsMatch(x);
 
         public static string FormatPhoneNumber(this string phoneNumber)
-        => phoneNumber.Map(RemoveNonNumeric).Map(FormatAreaCode).Map(InsertDash);
+            => phoneNumber.Wrap()
+                .Bind(RemoveNonNumeric)
+                .Bind(FormatAreaCode)
+                .Bind(InsertDash);
 
         public static bool ValidatePhoneNumber(this string phoneNumber) => phoneNumber.Validate(IsNumeric);
 
