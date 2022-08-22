@@ -1,10 +1,12 @@
 
 using System;
+using DotnetExtensions.Classes;
 
-namespace DotnetExtensions
+namespace DotnetExtensions.Numbers
 {
-    public static partial class NumberExtensions
+    public static partial class Extensions
     {
+        // Conversions
         public static decimal FahrenheitToCelsius(decimal tempF)
             => tempF.Wrap()
                 .Bind(x => x - 32)
@@ -30,5 +32,6 @@ namespace DotnetExtensions
                 .Bind(x => x * 9)
                 .Bind(x => x / 5)
                 .Bind(x => x + 32);
+
     }
 }

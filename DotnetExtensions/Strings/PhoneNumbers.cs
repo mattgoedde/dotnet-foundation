@@ -1,10 +1,10 @@
 using System;
-using System.Net.Mail;
 using System.Text.RegularExpressions;
+using DotnetExtensions.Classes;
 
 namespace DotnetExtensions
 {
-    public static partial class StringExtensions
+    public static partial class Extensions
     {
         // Phone Number extensions
         private static Func<string, string> RemoveNonNumeric = x => Regex.Replace(x, "[^0-9]", string.Empty);
@@ -19,9 +19,5 @@ namespace DotnetExtensions
                 .Bind(InsertDash);
 
         public static bool ValidatePhoneNumber(this string phoneNumber) => phoneNumber.Validate(IsNumeric);
-
-        // Email extensions
-        public static Func<string, bool> IsEmail = x => { try { new MailAddress(x); return true; } catch { return false; } };
-        public static bool ValidateEmail(this string email) => email.Validate(IsEmail);
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DotnetExtensions
 {
-    public static partial class UtilityExtensions
+    public static partial class Extensions
     {
 
         /// <summary>
