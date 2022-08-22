@@ -8,6 +8,20 @@ namespace Extensions
     {
 
         /// <summary>
+        /// Ensures that the argument is not null. Else throws standardized exception.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arg"></param>
+        /// <param name="argumentName">use nameof()</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static T ArgumentNotNull<T>(this T arg, string? argumentName = null) where T : class
+            =>
+            arg is null ?
+                throw new ArgumentNullException(argumentName, $"The provided argumet {argumentName} must not be Null.")
+            : arg;
+
+        /// <summary>
         /// Performs the mapping operation on the input.
         /// </summary>
         /// <typeparam name="TInput"></typeparam>
