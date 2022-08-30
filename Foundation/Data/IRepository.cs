@@ -13,5 +13,5 @@ public interface IRepository<TEntity>
     Task<IEnumerable<TEntity>> ReadAsync(CancellationToken cancellationToken = default!, params Func<TEntity, bool>[] predicates);
     Task<TEntity> ReadAsync(Guid id, CancellationToken cancellationToken = default!);
     Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default!);
-    Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default!);
+    Task DeleteAsync(Guid id, CancellationToken cancellationToken = default!);
 }
