@@ -1,11 +1,26 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace Extensions
 {
     public static partial class Extensions
     {
+        public static async Task<IEnumerable<T>> WhenAll<T>(params Task<T>[] tasks) => await tasks.AsEnumerable().WhenAll();
+        public static async Task<IEnumerable<T>> WhenAll<T>(this IEnumerable<Task<T>> tasks)
+        {
+            var allTasks = Task.WhenAll(tasks);
+
+            try
+            {
+                return await allTasks;
+            }
+            catch (Exception) { }
+
+            throw allTasks.Exception ?? throw new Exception();
+        }
 
         /// <summary>
         /// Ensures that the argument is not null. Else throws standardized exception.
